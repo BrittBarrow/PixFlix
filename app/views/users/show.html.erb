@@ -1,0 +1,19 @@
+<h1><%= "#{@user.username}"+"'s"%> showcase</h1>
+
+
+<% @user.pictures.each do |pic| %>
+<p><%= pic.title %></p>
+<p><%= link_to image_tag(pic.image_url), picture_path(pic) %></p>
+<% end %>
+
+
+
+<h3> + Upload A Picture</h3>
+<%= form_for @picture do |f| %><br>
+<%= f.label :image_url %><br>
+<%= f.text_field :image_url %><br>
+<%= f.label :title %><br>
+<%= f.text_field :title%><br>
+<%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+<%= f.submit %>
+<% end %>
