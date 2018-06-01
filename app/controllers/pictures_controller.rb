@@ -9,6 +9,7 @@ class PicturesController < ApplicationController
   end
 
   def create
+    byebug
     @picture = Picture.new(picture_params)
     if @picture.valid?
       @picture.save
@@ -30,11 +31,8 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:image_url, :title, :user_id)
+    params.require(:picture).permit(:image_url, :title, :user_id, tag_ids: [])
   end
 
-  def comment_params
-    params.require(:comment).permit(:content, :picture_id, :user_id )
-  end
 
 end

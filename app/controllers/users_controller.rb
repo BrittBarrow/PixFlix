@@ -27,8 +27,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
 
-  def picture_params
-    params.require(:picture).permit(:image_url, :title, :tag_id)
-  end
 
 end

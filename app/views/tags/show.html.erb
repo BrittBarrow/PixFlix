@@ -3,3 +3,5 @@
 <% @tag.pictures.each do |pic| %>
 <%= link_to image_tag(pic.image_url), picture_path(pic) %>
 <% end %>
+
+<p>TAKE ME BACK TO MY <%= link_to "COLLECTION", user_path(current_user) %></p>

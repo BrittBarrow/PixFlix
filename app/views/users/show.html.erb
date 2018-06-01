@@ -10,6 +10,7 @@
 
 <h3> + Upload A Picture</h3>
 <%= form_for @picture do |f| %><br>
+<%= f.hidden_field :user_id, value: @user.id%>
 <%= f.label :image_url %><br>
 <%= f.text_field :image_url %><br>
 <%= f.label :title %><br>
