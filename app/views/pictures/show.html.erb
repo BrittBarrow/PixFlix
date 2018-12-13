@@ -1,6 +1,8 @@
 <div>
+<%= @picture.title %>
+<br>
+<br>
 <%= image_tag(@picture.image_url) %><br>
-<%= @picture.title %><br>
 <% @picture.comments.each do |c| %>
 <li><%= c.content %></li>
 <% end %>
@@ -23,3 +25,5 @@
 <p>Tags: <%= link_to tag.name, tag_path(tag) %></p>
 <% end %>
 </div>
+
+<footer> <%= link_to "Log out", logout_path, method: "delete" %></footer>

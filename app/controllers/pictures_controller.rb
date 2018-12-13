@@ -9,7 +9,6 @@ class PicturesController < ApplicationController
   end
 
   def create
-    byebug
     @picture = Picture.new(picture_params)
     if @picture.valid?
       @picture.save

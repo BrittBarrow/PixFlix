@@ -7,7 +7,7 @@
 <% end %>
 
 
-
+<div>
 <h3> + Upload A Picture</h3>
 <%= form_for @picture do |f| %><br>
 <%= f.hidden_field :user_id, value: @user.id%>
@@ -18,3 +18,9 @@
 <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
 <%= f.submit %>
 <% end %>
+</div>
+
+<br>
+<br>
+<br>
+<footer> <%= link_to "Log out", logout_path, method: "delete" %></footer>
